@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제11회 미주한국국악경연대회 심사위원 페이지</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client"></script>
+    <style>
+        body {
+            background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb3GyvM%2FbtsJecKmsyF%2FXHAlje4L44ckUgscAQV5f1%2Fimg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgba(255, 255, 255, 0.85);
+            background-blend-mode: overlay;
+        }
+        @media (min-width: 768px) {
+            .content-wrapper {
+                width: 80%;
+                margin-left:auto;
+                margin-right: 10%;
+            }
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 70%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .chatbot-container {
+            width: 100vw; /* 전체 뷰포트 너비 */
+            height: 500px; /* 높이 고정 */
+            margin-left: calc(-50vw + 50%); /* 화면 중앙 정렬을 위한 음수 마진 */
+            overflow: hidden; /* 스크롤 대신 숨김 */
+            padding: 0 1rem; /* 비디오 컨테이너와 같은 수평 여백 */
+            box-sizing: border-box; /* 패딩이 전체 너비에 포함되도록 */
+        }
+        .chatbot-container iframe {
+            width: 100%; 
+            height: 100%;
+            border: none; /* 테두리 제거 */
+        }
+        main {
+            padding: 0; /* 메인 컨테이너 패딩 제거 */
+        }
+        .content-section {
+            padding: 1rem; /* 섹션별 최소 패딩 유지 */
+        }
+        #signatureCanvas {
+            touch-action: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-100">
+    <div class="container mx-auto">
+        <header class="mb-8 px-4">
+            <img src="https://blog.kakaocdn.net/dn/owmWP/btsJf8TN0An/iF390tnmI2gYTryuBBCFy0/img.gif" alt="대회 로고" class="mx-auto h-24">
+        </header>
+        
+        <main class="bg-white shadow-xl rounded-lg content-wrapper">
+            <h1 class="text-3xl font-bold text-center mb-6 content-section">The 11th Korean Traditional Music & Arts Festival </h1>
+            
+            <p class="text-lg text-center mb-8 content-section">
+                Congratulations on advancing to the finals. Please refer to this page for important information and guidelines.
+            </p>
+            
+            <div class="md:flex md:space-x-8">
+                <div class="md:w-2/3">
+                    <section class="mb-8 content-section">
+                        <h2 class="text-2xl font-semibold mb-4">Instructions video(English)</h2>
+                        <div class="video-container">
+                            <p>English</p>
+                            <iframe title="'my-data-project'에서 업로드한 동영상" width="640" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/450646676?service=player_share" allowfullscreen frameborder="0" scrolling="no" allow="autoplay; fullscreen; encrypted-media"></iframe>
+                          
+                        </div>
+                    </br>
+                    </br>
+
+                        <h2 class="text-2xl font-semibold mb-4">사전교육 영상(한국어)</h2>
+                        <div class="video-container">
+                            
+                            <iframe title="'my-data-project'에서 업로드한 동영상" width="640" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/450646717?service=player_share" allowfullscreen frameborder="0" scrolling="no" allow="autoplay; fullscreen; encrypted-media"></iframe>
+                          
+                        </div>
+                    </section>
+                    
+                    <section class="mb-8 content-section">
+                        <h2 class="text-2xl font-semibold mb-4">질의응답 챗봇</h2>
+                        <div class="chatbot-container">
+                            <iframe src="https://studio.d-id.com/agents/share?id=agt_x5toMh9D&key=WjI5dloyeGxMVzloZFhSb01ud3hNVGMwT1RrNU56RTBNVGs1TXpJM01UYzRNalU2YjFKaFdsSjNjVmRHYkRrNFRrcHdPRzlGUm5seA==" frameborder="0"></iframe>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
