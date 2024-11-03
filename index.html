@@ -3,32 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제11회 미주한국국악경연대회 심사위원 페이지</title>
+    <title>제11회 미주한국국악경연대회 참가자안내 페이지</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="https://accounts.google.com/gsi/client"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* 이전 스타일 유지 */
         body {
             background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb3GyvM%2FbtsJecKmsyF%2FXHAlje4L44ckUgscAQV5f1%2Fimg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.75);
             background-blend-mode: overlay;
+            font-family: 'Noto Serif KR', serif;
         }
+
+        .content-wrapper {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.95));
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
         @media (min-width: 768px) {
             .content-wrapper {
-                width: 80%;
-                margin-left:auto;
-                margin-right: 10%;
+                width: 85%;
+                margin: 0 auto;
+            }
+            .chatbot-container {
+                height: 900px !important;
             }
         }
+
+        /* 모바일 스타일 수정 */
+        @media (max-width: 767px) {
+            .mobile-title {
+                font-size: 1.25rem;
+                padding: 0 0.5rem;
+                line-height: 1.3;
+            }
+            .mobile-subtitle {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+            
+            .chatbot-container {
+                height: 450px; /* 20% 감소된 높이 */
+                width: 125%; /* 20% 증가된 너비 */
+                margin-left: -12%; /* 오른쪽으로 더 보이게 조정 */
+                margin-right: 0%;
+            }
+            .title-decoration::before,
+            .title-decoration::after {
+                display: none; /* 모바일에서 장식 제거 */
+            }
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* 나머지 스타일 유지 */
         .video-container {
             position: relative;
             padding-bottom: 70%;
             height: 0;
             overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
+
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -36,69 +83,105 @@
             width: 100%;
             height: 100%;
         }
+
         .chatbot-container {
-            width: 100vw; /* 전체 뷰포트 너비 */
-            height: 500px; /* 높이 고정 */
-            margin-left: calc(-50vw + 50%); /* 화면 중앙 정렬을 위한 음수 마진 */
-            overflow: hidden; /* 스크롤 대신 숨김 */
-            padding: 0 1rem; /* 비디오 컨테이너와 같은 수평 여백 */
-            box-sizing: border-box; /* 패딩이 전체 너비에 포함되도록 */
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
+
         .chatbot-container iframe {
             width: 100%; 
             height: 100%;
-            border: none; /* 테두리 제거 */
+            border: none;
         }
-        main {
-            padding: 0; /* 메인 컨테이너 패딩 제거 */
+
+        .section-title {
+            color: #2D3748;
+            border-bottom: 2px solid #4A5568;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            position: relative;
         }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(to right, #4A5568, transparent);
+        }
+
         .content-section {
-            padding: 1rem; /* 섹션별 최소 패딩 유지 */
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 1rem;
         }
-        #signatureCanvas {
-            touch-action: none;
+
+        h1, h2 {
+            letter-spacing: -0.05em;
+        }
+
+        .title-decoration {
+            position: relative;
+            display: inline-block;
+        }
+
+        .title-decoration::before,
+        .title-decoration::after {
+            content: '❋';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4A5568;
+            font-size: 1.2em;
+        }
+
+        .title-decoration::before {
+            left: -2em;
+        }
+
+        .title-decoration::after {
+            right: -2em;
         }
     </style>
 </head>
 <body class="min-h-screen bg-gray-100">
-    <div class="container mx-auto">
-        <header class="mb-8 px-4">
-            <img src="https://blog.kakaocdn.net/dn/owmWP/btsJf8TN0An/iF390tnmI2gYTryuBBCFy0/img.gif" alt="대회 로고" class="mx-auto h-24">
+    <div class="container mx-auto px-4">
+        <header class="py-8">
+            <img src="https://blog.kakaocdn.net/dn/owmWP/btsJf8TN0An/iF390tnmI2gYTryuBBCFy0/img.gif" alt="대회 로고" class="mx-auto h-24 md:h-32">
         </header>
         
-        <main class="bg-white shadow-xl rounded-lg content-wrapper">
-            <h1 class="text-3xl font-bold text-center mb-6 content-section">The 11th Korean Traditional Music & Arts Festival </h1>
-            
-            <p class="text-lg text-center mb-8 content-section">
-                Congratulations on advancing to the finals. Please refer to this page for important information and guidelines.
-            </p>
-            
-            <div class="md:flex md:space-x-8">
-                <div class="md:w-2/3">
-                    <section class="mb-8 content-section">
-                        <h2 class="text-2xl font-semibold mb-4">Instructions video(English)</h2>
-                        <div class="video-container">
-                            <p>English</p>
-                            <iframe title="'my-data-project'에서 업로드한 동영상" width="640" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/450646676?service=player_share" allowfullscreen frameborder="0" scrolling="no" allow="autoplay; fullscreen; encrypted-media"></iframe>
-                          
-                        </div>
-                    </br>
-                    </br>
+        <main class="rounded-lg content-wrapper mb-12">
+            <div class="content-section">
+                <h1 class="text-3xl md:text-4xl font-bold text-center mb-4 mobile-title text-gray-800">
+                    <span class="title-decoration">The 11th Korean Music & Arts Festival</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-center mb-8 mobile-subtitle text-gray-600 leading-relaxed">
+                    Congratulations on advancing to the finals.<br>
+                    Please refer to this page for important information and guidelines.
+                </p>
+            </div>
+                <div class="content-section">
+                <h2 class="section-title text-2xl font-semibold">Instructions video (English)</h2>
+                <div class="video-container mb-8">
+                    <iframe title="Instructions in English" width="640" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/450646676?service=player_share" allowfullscreen frameborder="0" scrolling="no" allow="autoplay; fullscreen; encrypted-media"></iframe>
+                </div>
 
-                        <h2 class="text-2xl font-semibold mb-4">사전교육 영상(한국어)</h2>
-                        <div class="video-container">
-                            
-                            <iframe title="'my-data-project'에서 업로드한 동영상" width="640" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/450646717?service=player_share" allowfullscreen frameborder="0" scrolling="no" allow="autoplay; fullscreen; encrypted-media"></iframe>
-                          
-                        </div>
-                    </section>
-                    
-                    <section class="mb-8 content-section">
-                        <h2 class="text-2xl font-semibold mb-4">질의응답 챗봇</h2>
-                        <div class="chatbot-container">
-                            <iframe src="https://studio.d-id.com/agents/share?id=agt_x5toMh9D&key=WjI5dloyeGxMVzloZFhSb01ud3hNVGMwT1RrNU56RTBNVGs1TXpJM01UYzRNalU2YjFKaFdsSjNjVmRHYkRrNFRrcHdPRzlGUm5seA==" frameborder="0"></iframe>
-                        </div>
-                    </section>
+                <h2 class="section-title text-2xl font-semibold">사전교육 영상 (한국어)</h2>
+                <div class="video-container mb-8">
+                    <iframe title="사전교육 영상" width="640" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/450646717?service=player_share" allowfullscreen frameborder="0" scrolling="no" allow="autoplay; fullscreen; encrypted-media"></iframe>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <h2 class="section-title text-2xl font-semibold">질의응답 챗봇</h2>
+                <div class="chatbot-container">
+                    <iframe src="https://studio.d-id.com/agents/share?id=agt_x5toMh9D&key=WjI5dloyeGxMVzloZFhSb01ud3hNVGMwT1RrNU56RTBNVGs1TXpJM01UYzRNalU2YjFKaFdsSjNjVmRHYkRrNFRrcHdPRzlGUm5seA==" frameborder="0"></iframe>
                 </div>
             </div>
         </main>
